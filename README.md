@@ -1,2 +1,2 @@
 # Hearthstone / PHP
-Not working, going to keep working on it
+Stops at do you want to keep your cards
