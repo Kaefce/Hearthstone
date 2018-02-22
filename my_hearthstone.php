@@ -1,21 +1,38 @@
 <?php
 include "indpres.php";
 
+echo "\n";
 echo "\033[01;31m It is said that wars are only one upon the anvil of honor. \033[0m \n";
+echo "\n";
 sleep(3);
-echo "Others believe victory requires strategy and the mastery of power.\n";
+echo "\e[01;31m Others believe victory requires strategy and the mastery of power.\e[0m\n";
+echo "\n";
 sleep(3);
-echo "War is deception ...\n";
+echo "\e[01;31m War is deception ...\e[0m\n";
+echo "\n";
 sleep(1);
-echo "A game played best from the shadows.\n";
+echo "\e[01;31m A game played best from the shadows.\e[0m\n";
+echo "\n";
 sleep(2);
 echo "\e[01;31m Only strength and raw power can assure total dominance. \e[0m \n";
+echo "\n";
 sleep(3);
-echo "But of course u could forget all that and just have fun !\n";
+echo "\e[01;31m But of course u could forget all that and just have fun !\e[0m\n";
+echo "\n";
 sleep(3);
-echo "With my_Hearthstone Heroes of ETNA !\n";
-sleep(2);
-echo "";
+echo " ----------------------------------------------------------------------\n";
+echo "|                                                                      |\n";
+echo "| #   # #####  ###  ##### ##### #   #  ##### ##### ##### ##   # #####  |\n";
+echo "| #   # #     #   # #   #   #   #   #  #       #   #   # # #  # #      |\n";
+echo "| ##### ####  ##### #####   #   #####  #####   #   #   # #  # # ####   |\n";
+echo "| #   # #     #   # # #     #   #   #      #   #   #   # #   ## #      |\n";
+echo "| #   # ##### #   # #  #    #   #   #  #####   #   ##### #    # #####  |\n";
+echo "|                                                                      |\n";
+echo "|                                                                      |\n";
+echo "|            ---- With my_Hearthstone Heroes of ETNA ----!             |\n";
+echo "|                                                                      |\n";
+echo "-----------------------------------------------------------------------\n";
+sleep(1);
 
 function    start($argc, $argv) {
     $tab = ["Mage", "Hunter", "Druid", "Paladin", "Priest", "Rogue", "Shaman", "Warlock", "War"];
@@ -30,6 +47,7 @@ function    start($argc, $argv) {
                 echo "  Greetings Wanderer " . $argv[1] . "\n";
                 echo "                                     \n";
                 echo " Interesting class choice, playing a " . $argv[2] . " won't be easy\n";
+                echo "\n";
                 return ($argv[2]);
             }
             $n++;
@@ -82,10 +100,10 @@ function	open_to_tab() {
     {
         $cards[$i] = fopen("cards/" . $cards_files[$i], 'r+');
         $contenu[$i] = fread($cards[$i], 800000);
-        preg_match_all("/\"([\w\s._]*)\"/", $contenu[$i],$cards_files);
+        preg_match_all("/\"([\w\s._]*)\"/", $contenu[$i], $tab_cards[$i]);
         $i++;
     }
-    return($cards_files);
+    return($tab_cards);
 }
 
 function	open($argv) {
