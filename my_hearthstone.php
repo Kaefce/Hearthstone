@@ -1,7 +1,7 @@
 <?php
 include "indpres.php";
 
-echo "It is said that wars are only one upon the anvil of honor.\n";
+echo "\033[01;31m It is said that wars are only one upon the anvil of honor. \033[0m \n";
 sleep(3);
 echo "Others believe victory requires strategy and the mastery of power.\n";
 sleep(3);
@@ -9,18 +9,19 @@ echo "War is deception ...\n";
 sleep(1);
 echo "A game played best from the shadows.\n";
 sleep(2);
-echo "Only strength and raw power can assure total dominance.\n";
+echo "\e[01;31m Only strength and raw power can assure total dominance. \e[0m \n";
 sleep(3);
 echo "But of course u could forget all that and just have fun !\n";
 sleep(3);
 echo "With my_Hearthstone Heroes of ETNA !\n";
 sleep(2);
+echo "";
 
 function    start($argc, $argv) {
     $tab = ["Mage", "Hunter", "Druid", "Paladin", "Priest", "Rogue", "Shaman", "Warlock", "War"];
     $n = 0;
 
-    if ($argc != 0)
+    if ($argc == 0)
         echo "Choose a class and username at the same time\n";
     else {
         while (isset($tab[$n])) {
@@ -81,10 +82,10 @@ function	open_to_tab() {
     {
         $cards[$i] = fopen("cards/" . $cards_files[$i], 'r+');
         $contenu[$i] = fread($cards[$i], 800000);
-        preg_match_all("/\"([\w\s._]*)\"/", $contenu[$i], $tab_cards[$i]);
+        preg_match_all("/\"([\w\s._]*)\"/", $contenu[$i],$cards_files);
         $i++;
     }
-    return($tab_cards);
+    return($cards_files);
 }
 
 function	open($argv) {
